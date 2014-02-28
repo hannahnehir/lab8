@@ -10,4 +10,10 @@ $(document).ready(function() {
  */
 function initializePage() {
 	// your code here
+	var start = new Date().getTime();
+	$('.likeBtn').click(function() {
+		ga("send", "event", "like", "click");
+		var end = new Date().getTime();
+		ga("send", "timing", "timeBeforeLike", "Elapsed time until like is pressed", (end-start));
+	});
 }
